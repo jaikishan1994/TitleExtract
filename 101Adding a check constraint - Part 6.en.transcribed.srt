@@ -1,0 +1,1080 @@
+﻿1
+00:00:00,030 --> 00:00:04,380
+Oh welcome<font color="#E5E5E5"> to premium technologies I am</font>
+
+2
+00:00:02,100 --> 00:00:07,080
+venket<font color="#E5E5E5"> this is part</font><font color="#CCCCCC"> 6 of sequel server</font>
+
+3
+00:00:04,380 --> 00:00:08,969
+<font color="#CCCCCC">in this session</font><font color="#E5E5E5"> we'll understand what</font>
+
+4
+00:00:07,080 --> 00:00:11,070
+check constraint is and when do we<font color="#CCCCCC"> use</font>
+
+5
+00:00:08,970 --> 00:00:13,620
+<font color="#CCCCCC">it</font><font color="#E5E5E5"> now</font>
+
+6
+00:00:11,070 --> 00:00:15,570
+check constraint is used<font color="#CCCCCC"> to limit</font><font color="#E5E5E5"> the</font>
+
+7
+00:00:13,620 --> 00:00:17,880
+range of the values<font color="#CCCCCC"> that can be entered</font>
+
+8
+00:00:15,570 --> 00:00:20,789
+for<font color="#E5E5E5"> a specific column let's understand</font>
+
+9
+00:00:17,880 --> 00:00:23,070
+this<font color="#E5E5E5"> with an example</font><font color="#CCCCCC"> I have this table</font>
+
+10
+00:00:20,789 --> 00:00:26,519
+<font color="#E5E5E5">called TBL person which</font><font color="#CCCCCC"> has got this age</font>
+
+11
+00:00:23,070 --> 00:00:28,619
+column in reality<font color="#E5E5E5"> age of a person</font><font color="#CCCCCC"> cannot</font>
+
+12
+00:00:26,519 --> 00:00:31,019
+be<font color="#E5E5E5"> negative</font><font color="#CCCCCC"> and along the same lines</font>
+
+13
+00:00:28,619 --> 00:00:34,980
+<font color="#E5E5E5">it's impractical for a human being to</font><font color="#CCCCCC"> be</font>
+
+14
+00:00:31,019 --> 00:00:37,290
+alive after 150<font color="#E5E5E5"> years</font><font color="#CCCCCC"> so the age column</font>
+
+15
+00:00:34,980 --> 00:00:41,699
+<font color="#E5E5E5">you know should be taking values between</font>
+
+16
+00:00:37,290 --> 00:00:43,829
+0<font color="#CCCCCC"> and 115 okay</font><font color="#E5E5E5"> but if you look at the</font>
+
+17
+00:00:41,700 --> 00:00:45,840
+data type of<font color="#CCCCCC"> this age column it's an</font>
+
+18
+00:00:43,829 --> 00:00:48,210
+integer<font color="#CCCCCC"> by the way if you want</font><font color="#E5E5E5"> to find</font>
+
+19
+00:00:45,840 --> 00:00:50,250
+out the you know<font color="#E5E5E5"> did the data type of</font>
+
+20
+00:00:48,210 --> 00:00:52,410
+any column in sequence over there are
+
+21
+00:00:50,250 --> 00:00:54,539
+several ways<font color="#E5E5E5"> okay one of the easiest</font>
+
+22
+00:00:52,410 --> 00:00:56,429
+ways is<font color="#E5E5E5"> to expand the tables folder</font>
+
+23
+00:00:54,539 --> 00:00:58,859
+<font color="#E5E5E5">within the database and you go to that</font>
+
+24
+00:00:56,430 --> 00:01:01,260
+specific table and expand the columns
+
+25
+00:00:58,859 --> 00:01:04,979
+folder and you can<font color="#CCCCCC"> see that the age</font>
+
+26
+00:01:01,260 --> 00:01:07,740
+column is of type integer<font color="#E5E5E5"> and it allows</font>
+
+27
+00:01:04,979 --> 00:01:09,689
+nulls<font color="#E5E5E5"> this is one way another quick way</font>
+
+28
+00:01:07,740 --> 00:01:11,460
+to find<font color="#E5E5E5"> out the information</font><font color="#CCCCCC"> about the</font>
+
+29
+00:01:09,689 --> 00:01:13,889
+columns<font color="#E5E5E5"> that</font><font color="#CCCCCC"> are present inside the</font>
+
+30
+00:01:11,460 --> 00:01:17,970
+<font color="#E5E5E5">table is highlight the</font><font color="#CCCCCC"> table and press</font>
+
+31
+00:01:13,890 --> 00:01:19,740
+alt f1 so that should bring up the
+
+32
+00:01:17,970 --> 00:01:21,960
+columns and<font color="#E5E5E5"> their</font><font color="#CCCCCC"> respective data types</font>
+
+33
+00:01:19,740 --> 00:01:23,429
+as well so if you look at<font color="#E5E5E5"> the age data</font>
+
+34
+00:01:21,960 --> 00:01:26,520
+type it is<font color="#E5E5E5"> of type integer</font>
+
+35
+00:01:23,430 --> 00:01:29,549
+so since age<font color="#E5E5E5"> is integer</font><font color="#CCCCCC"> datatype</font>
+
+36
+00:01:26,520 --> 00:01:32,759
+it can allow any allow you know<font color="#E5E5E5"> valid</font>
+
+37
+00:01:29,549 --> 00:01:36,030
+<font color="#CCCCCC">integer</font><font color="#E5E5E5"> for example let's try</font><font color="#CCCCCC"> to insert</font>
+
+38
+00:01:32,759 --> 00:01:39,920
+a<font color="#E5E5E5"> rain row into the stable so insert</font>
+
+39
+00:01:36,030 --> 00:01:39,920
+into TBL person let's say
+
+40
+00:01:43,759 --> 00:01:54,590
+I want to insert ID of<font color="#CCCCCC"> four</font><font color="#E5E5E5"> and the name</font>
+
+41
+00:01:47,450 --> 00:01:58,939
+<font color="#E5E5E5">of the</font><font color="#CCCCCC"> person maybe Sarah</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> email a</font>
+
+42
+00:01:54,590 --> 00:02:03,590
+<font color="#E5E5E5">set s comm and maybe gender IDs and she</font>
+
+43
+00:01:58,939 --> 00:02:05,750
+is a female<font color="#CCCCCC"> let's say two and</font><font color="#E5E5E5"> age now</font>
+
+44
+00:02:03,590 --> 00:02:08,300
+look at this since age is of type
+
+45
+00:02:05,750 --> 00:02:10,910
+integer<font color="#CCCCCC"> I can enter</font><font color="#E5E5E5"> something like minus</font>
+
+46
+00:02:08,300 --> 00:02:13,129
+<font color="#CCCCCC">nine hundred and seventy</font><font color="#E5E5E5"> okay</font><font color="#CCCCCC"> and if I</font>
+
+47
+00:02:10,910 --> 00:02:15,560
+try<font color="#E5E5E5"> to execute this query the rule will</font>
+
+48
+00:02:13,129 --> 00:02:18,200
+<font color="#CCCCCC">be happily</font><font color="#E5E5E5"> accepted into the table so</font>
+
+49
+00:02:15,560 --> 00:02:21,410
+for the age column<font color="#E5E5E5"> I'm able to enter an</font>
+
+50
+00:02:18,200 --> 00:02:23,209
+invalid<font color="#E5E5E5"> age okay so is it possible to</font>
+
+51
+00:02:21,410 --> 00:02:25,069
+prevent numbers like this being<font color="#E5E5E5"> entered</font>
+
+52
+00:02:23,209 --> 00:02:27,140
+see all I want to allow with this column
+
+53
+00:02:25,069 --> 00:02:29,179
+is a number<font color="#E5E5E5"> between</font><font color="#CCCCCC"> zero and fifty if</font>
+
+54
+00:02:27,140 --> 00:02:30,980
+anybody tries to<font color="#E5E5E5"> enter a number</font><font color="#CCCCCC"> outside</font>
+
+55
+00:02:29,180 --> 00:02:33,920
+of that range<font color="#CCCCCC"> I want to throw an error</font>
+
+56
+00:02:30,980 --> 00:02:35,959
+is<font color="#CCCCCC"> that possible</font><font color="#E5E5E5"> absolutely using the</font>
+
+57
+00:02:33,920 --> 00:02:38,359
+check constraint<font color="#CCCCCC"> of sequel so it</font><font color="#E5E5E5"> checks</font>
+
+58
+00:02:35,959 --> 00:02:40,370
+the values while you<font color="#E5E5E5"> enter them and then</font>
+
+59
+00:02:38,360 --> 00:02:42,319
+if it falls outside that range it throws
+
+60
+00:02:40,370 --> 00:02:44,480
+<font color="#CCCCCC">in error</font><font color="#E5E5E5"> so how do we add a check</font>
+
+61
+00:02:42,319 --> 00:02:46,609
+constraint<font color="#E5E5E5"> like any other constraint</font>
+
+62
+00:02:44,480 --> 00:02:48,798
+<font color="#E5E5E5">check constraint you know can</font><font color="#CCCCCC"> be added</font>
+
+63
+00:02:46,610 --> 00:02:51,019
+to sequel server in two ways<font color="#CCCCCC"> one is</font>
+
+64
+00:02:48,799 --> 00:02:53,299
+graphically<font color="#CCCCCC"> using the designer</font><font color="#E5E5E5"> the other</font>
+
+65
+00:02:51,019 --> 00:02:54,980
+one is<font color="#E5E5E5"> obviously using a query now first</font>
+
+66
+00:02:53,299 --> 00:02:59,120
+let's see<font color="#CCCCCC"> how</font><font color="#E5E5E5"> to</font><font color="#CCCCCC"> do that</font><font color="#E5E5E5"> graphically</font>
+
+67
+00:02:54,980 --> 00:03:00,798
+<font color="#E5E5E5">using the designer so since it's a</font>
+
+68
+00:02:59,120 --> 00:03:02,420
+constraint<font color="#E5E5E5"> you can go on to the</font>
+
+69
+00:03:00,799 --> 00:03:04,430
+constraints folder in sequence of<font color="#E5E5E5"> our</font>
+
+70
+00:03:02,420 --> 00:03:06,858
+management<font color="#E5E5E5"> studio by the way you have</font><font color="#CCCCCC"> to</font>
+
+71
+00:03:04,430 --> 00:03:09,889
+<font color="#CCCCCC">be in the table under</font><font color="#E5E5E5"> the table folder</font>
+
+72
+00:03:06,859 --> 00:03:12,350
+so I want<font color="#E5E5E5"> to do it for TBL person</font><font color="#CCCCCC"> table</font>
+
+73
+00:03:09,889 --> 00:03:13,970
+so expand the TBL person table<font color="#E5E5E5"> there you</font>
+
+74
+00:03:12,350 --> 00:03:16,250
+should<font color="#E5E5E5"> see</font><font color="#CCCCCC"> a constraints folder right</font>
+
+75
+00:03:13,970 --> 00:03:19,730
+click on<font color="#CCCCCC"> that</font><font color="#E5E5E5"> and select new constraint</font>
+
+76
+00:03:16,250 --> 00:03:21,350
+<font color="#E5E5E5">so this should bring up a check</font>
+
+77
+00:03:19,730 --> 00:03:23,358
+constraints window where we<font color="#CCCCCC"> can</font>
+
+78
+00:03:21,350 --> 00:03:27,200
+basically add the constraint information
+
+79
+00:03:23,359 --> 00:03:29,810
+<font color="#E5E5E5">now remember a constraint is just a</font>
+
+80
+00:03:27,200 --> 00:03:32,839
+boolean expression which returns a true
+
+81
+00:03:29,810 --> 00:03:36,650
+<font color="#E5E5E5">or a false okay now what's our aim our</font>
+
+82
+00:03:32,840 --> 00:03:39,410
+aim is<font color="#CCCCCC"> that the age column shouldn't be</font>
+
+83
+00:03:36,650 --> 00:03:43,639
+allowing<font color="#E5E5E5"> a number less</font><font color="#CCCCCC"> than 0 or greater</font>
+
+84
+00:03:39,410 --> 00:03:45,650
+than 150<font color="#CCCCCC"> okay</font><font color="#E5E5E5"> so how do we do that you</font>
+
+85
+00:03:43,639 --> 00:03:47,720
+add that<font color="#E5E5E5"> expression here and whatever</font>
+
+86
+00:03:45,650 --> 00:03:49,400
+expression<font color="#CCCCCC"> that you enter</font><font color="#E5E5E5"> here should be</font>
+
+87
+00:03:47,720 --> 00:03:52,930
+a boolean<font color="#E5E5E5"> expression it should</font><font color="#CCCCCC"> written a</font>
+
+88
+00:03:49,400 --> 00:03:56,090
+<font color="#E5E5E5">true or a false if it returns true</font><font color="#CCCCCC"> then</font>
+
+89
+00:03:52,930 --> 00:03:58,010
+the value<font color="#CCCCCC"> will be allowed to</font><font color="#E5E5E5"> be</font><font color="#CCCCCC"> entered</font>
+
+90
+00:03:56,090 --> 00:04:00,860
+<font color="#CCCCCC">if it returns false</font>
+
+91
+00:03:58,010 --> 00:04:04,280
+then it doesn't allow<font color="#E5E5E5"> the value</font><font color="#CCCCCC"> okay so</font>
+
+92
+00:04:00,860 --> 00:04:08,620
+what we<font color="#E5E5E5"> want to do is the age should be</font>
+
+93
+00:04:04,280 --> 00:04:13,580
+less than I mean greater than zero<font color="#E5E5E5"> and</font>
+
+94
+00:04:08,620 --> 00:04:15,530
+age should be less than 150 so<font color="#E5E5E5"> anytime</font>
+
+95
+00:04:13,580 --> 00:04:18,228
+anybody is supplying a value for<font color="#E5E5E5"> the age</font>
+
+96
+00:04:15,530 --> 00:04:19,639
+column it has<font color="#CCCCCC"> to be within</font><font color="#E5E5E5"> that range</font><font color="#CCCCCC"> it</font>
+
+97
+00:04:18,228 --> 00:04:22,490
+<font color="#E5E5E5">has to be greater than zero less than</font>
+
+98
+00:04:19,639 --> 00:04:24,530
+150 click<font color="#CCCCCC"> OK</font><font color="#E5E5E5"> and another thing that we</font>
+
+99
+00:04:22,490 --> 00:04:26,360
+<font color="#CCCCCC">have to do is give it</font><font color="#E5E5E5"> a meaningful name</font>
+
+100
+00:04:24,530 --> 00:04:28,400
+<font color="#E5E5E5">okay just by looking at the name you</font>
+
+101
+00:04:26,360 --> 00:04:30,800
+should<font color="#E5E5E5"> be able to tell</font><font color="#CCCCCC"> ok</font><font color="#E5E5E5"> this is a</font>
+
+102
+00:04:28,400 --> 00:04:33,440
+check<font color="#CCCCCC"> constraint on this table</font><font color="#E5E5E5"> for this</font>
+
+103
+00:04:30,800 --> 00:04:35,419
+column<font color="#CCCCCC"> okay and the common convention is</font>
+
+104
+00:04:33,440 --> 00:04:36,080
+<font color="#CCCCCC">that for a check constraint</font><font color="#E5E5E5"> we use</font><font color="#CCCCCC"> ck</font>
+
+105
+00:04:35,419 --> 00:04:38,359
+prefix
+
+106
+00:04:36,080 --> 00:04:39,949
+<font color="#CCCCCC">ck underscore the name of the</font><font color="#E5E5E5"> table on</font>
+
+107
+00:04:38,360 --> 00:04:43,190
+which<font color="#CCCCCC"> we want to create that</font><font color="#E5E5E5"> constraint</font>
+
+108
+00:04:39,949 --> 00:04:45,530
+<font color="#E5E5E5">and for the column</font><font color="#CCCCCC"> to which</font><font color="#E5E5E5"> we want to</font>
+
+109
+00:04:43,190 --> 00:04:49,310
+create<font color="#E5E5E5"> that constraint in this case it's</font>
+
+110
+00:04:45,530 --> 00:04:51,919
+the age column and then<font color="#CCCCCC"> you have</font><font color="#E5E5E5"> another</font>
+
+111
+00:04:49,310 --> 00:04:53,900
+option here<font color="#E5E5E5"> check existing data on</font>
+
+112
+00:04:51,919 --> 00:04:55,789
+creation<font color="#CCCCCC"> okay</font>
+
+113
+00:04:53,900 --> 00:04:57,650
+so what does<font color="#E5E5E5"> this mean</font><font color="#CCCCCC"> if there is</font>
+
+114
+00:04:55,789 --> 00:04:58,969
+already invalid<font color="#E5E5E5"> data which doesn't fall</font>
+
+115
+00:04:57,650 --> 00:05:01,460
+<font color="#E5E5E5">into this criteria</font>
+
+116
+00:04:58,970 --> 00:05:03,260
+you know this constraint will fail<font color="#E5E5E5"> you</font>
+
+117
+00:05:01,460 --> 00:05:05,570
+know it<font color="#CCCCCC"> doesn't you know it basically</font>
+
+118
+00:05:03,260 --> 00:05:08,210
+<font color="#E5E5E5">will will not succeed in</font><font color="#CCCCCC"> getting created</font>
+
+119
+00:05:05,570 --> 00:05:10,669
+<font color="#CCCCCC">okay so it checks</font><font color="#E5E5E5"> the existing data so</font>
+
+120
+00:05:08,210 --> 00:05:13,010
+you<font color="#CCCCCC"> can turn this off</font><font color="#E5E5E5"> or alternatively</font>
+
+121
+00:05:10,669 --> 00:05:15,200
+<font color="#E5E5E5">you can delete that bad data</font><font color="#CCCCCC"> okay let's</font>
+
+122
+00:05:13,010 --> 00:05:16,940
+close<font color="#E5E5E5"> that but then when I try to save</font>
+
+123
+00:05:15,200 --> 00:05:21,380
+it<font color="#E5E5E5"> that's when we get an error</font>
+
+124
+00:05:16,940 --> 00:05:23,780
+<font color="#E5E5E5">so unable to add this constraint</font><font color="#CCCCCC"> okay</font><font color="#E5E5E5"> so</font>
+
+125
+00:05:21,380 --> 00:05:27,260
+what we<font color="#E5E5E5"> will do first is we will go</font>
+
+126
+00:05:23,780 --> 00:05:29,719
+ahead and delete that<font color="#E5E5E5"> invalid row so</font>
+
+127
+00:05:27,260 --> 00:05:31,880
+which is that invalid row<font color="#CCCCCC"> they record</font>
+
+128
+00:05:29,720 --> 00:05:38,900
+<font color="#E5E5E5">with ID</font><font color="#CCCCCC"> 4</font><font color="#E5E5E5"> so let's delete</font><font color="#CCCCCC"> that from</font><font color="#E5E5E5"> that</font>
+
+129
+00:05:31,880 --> 00:05:42,740
+<font color="#CCCCCC">table so they lead from TBL person where</font>
+
+130
+00:05:38,900 --> 00:05:45,349
+ID is equal<font color="#CCCCCC"> to 4 so we deleted that</font>
+
+131
+00:05:42,740 --> 00:05:49,490
+invalid row now all of the rows are
+
+132
+00:05:45,349 --> 00:05:54,919
+valid for<font color="#CCCCCC"> us so now let's try</font><font color="#E5E5E5"> to save</font>
+
+133
+00:05:49,490 --> 00:05:56,510
+this and it gets saved<font color="#CCCCCC"> ok</font><font color="#E5E5E5"> now let's try</font>
+
+134
+00:05:54,919 --> 00:05:58,760
+<font color="#CCCCCC">to</font><font color="#E5E5E5"> execute this query and see what's</font>
+
+135
+00:05:56,510 --> 00:06:00,800
+going to<font color="#E5E5E5"> happen</font><font color="#CCCCCC"> when I try</font><font color="#E5E5E5"> to execute</font>
+
+136
+00:05:58,760 --> 00:06:02,960
+this query look at that you know the
+
+137
+00:06:00,800 --> 00:06:05,150
+check<font color="#CCCCCC"> constraint is kicking in it's</font>
+
+138
+00:06:02,960 --> 00:06:07,460
+telling<font color="#CCCCCC"> ok</font><font color="#E5E5E5"> the insert statement</font>
+
+139
+00:06:05,150 --> 00:06:09,799
+conflicted<font color="#E5E5E5"> with the check constraint</font><font color="#CCCCCC"> see</font>
+
+140
+00:06:07,460 --> 00:06:11,680
+<font color="#CCCCCC">Candice</font><font color="#E5E5E5"> code</font><font color="#CCCCCC"> tibial personal score</font><font color="#E5E5E5"> 8 the</font>
+
+141
+00:06:09,800 --> 00:06:14,020
+constraint<font color="#E5E5E5"> that we have just created</font>
+
+142
+00:06:11,680 --> 00:06:16,300
+on the other hand if<font color="#CCCCCC"> I supply</font><font color="#E5E5E5"> a valid</font>
+
+143
+00:06:14,020 --> 00:06:18,400
+age maybe<font color="#CCCCCC"> ten</font><font color="#E5E5E5"> years and if I try to</font>
+
+144
+00:06:16,300 --> 00:06:20,080
+execute<font color="#E5E5E5"> this query it happily gets</font>
+
+145
+00:06:18,400 --> 00:06:22,090
+inserted so if we select<font color="#E5E5E5"> all the rows</font>
+
+146
+00:06:20,080 --> 00:06:24,550
+<font color="#E5E5E5">from</font><font color="#CCCCCC"> the table you should see that sarah</font>
+
+147
+00:06:22,090 --> 00:06:27,039
+<font color="#E5E5E5">has got the age of</font><font color="#CCCCCC"> ten right now okay</font>
+
+148
+00:06:24,550 --> 00:06:29,289
+now let's do one more<font color="#E5E5E5"> test let's say we</font>
+
+149
+00:06:27,039 --> 00:06:33,219
+<font color="#E5E5E5">are inserting</font><font color="#CCCCCC"> another set of</font><font color="#E5E5E5"> at ID five</font>
+
+150
+00:06:29,289 --> 00:06:37,330
+and let's say cure instead of passing a
+
+151
+00:06:33,220 --> 00:06:39,310
+value for age<font color="#CCCCCC"> now remember</font><font color="#E5E5E5"> each column</font>
+
+152
+00:06:37,330 --> 00:06:40,840
+is a nullable column which means you
+
+153
+00:06:39,310 --> 00:06:44,110
+don't have to<font color="#E5E5E5"> supply a value for that</font>
+
+154
+00:06:40,840 --> 00:06:46,239
+you can just pass now<font color="#E5E5E5"> okay so if I pass</font>
+
+155
+00:06:44,110 --> 00:06:47,699
+<font color="#E5E5E5">now what is going</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> happen to that</font>
+
+156
+00:06:46,240 --> 00:06:50,560
+<font color="#E5E5E5">boolean expression that we have written</font>
+
+157
+00:06:47,699 --> 00:06:53,020
+<font color="#CCCCCC">okay</font><font color="#E5E5E5"> now if you remember the boolean</font>
+
+158
+00:06:50,560 --> 00:06:54,430
+expression<font color="#CCCCCC"> is age should</font><font color="#E5E5E5"> be greater</font><font color="#CCCCCC"> than</font>
+
+159
+00:06:53,020 --> 00:06:58,150
+zero<font color="#CCCCCC"> and at the same</font><font color="#E5E5E5"> time it</font><font color="#CCCCCC"> should be</font>
+
+160
+00:06:54,430 --> 00:07:01,449
+<font color="#E5E5E5">less than 150 now is null greater than 0</font>
+
+161
+00:06:58,150 --> 00:07:03,130
+or<font color="#E5E5E5"> less</font><font color="#CCCCCC"> than 150 you know this is an</font>
+
+162
+00:07:01,449 --> 00:07:05,560
+unknown value<font color="#E5E5E5"> you know the boolean</font>
+
+163
+00:07:03,130 --> 00:07:08,380
+expression<font color="#E5E5E5"> returns an unknown result in</font>
+
+164
+00:07:05,560 --> 00:07:13,389
+which case the constraint passes and
+
+165
+00:07:08,380 --> 00:07:15,880
+allows null to be inserted so if we run
+
+166
+00:07:13,389 --> 00:07:17,560
+<font color="#E5E5E5">this this query will</font><font color="#CCCCCC"> be executed why</font>
+
+167
+00:07:15,880 --> 00:07:20,530
+because the boolean expression<font color="#E5E5E5"> doesn't</font>
+
+168
+00:07:17,560 --> 00:07:22,180
+return false<font color="#E5E5E5"> it just returns unknown</font>
+
+169
+00:07:20,530 --> 00:07:25,119
+because you cannot compare null with
+
+170
+00:07:22,180 --> 00:07:27,610
+anything<font color="#E5E5E5"> so it doesn't return false</font>
+
+171
+00:07:25,120 --> 00:07:29,770
+that's why it allows nulls to be
+
+172
+00:07:27,610 --> 00:07:32,260
+<font color="#E5E5E5">interest inserted so you can add nulls</font>
+
+173
+00:07:29,770 --> 00:07:36,400
+and you can add any valid values that
+
+174
+00:07:32,260 --> 00:07:38,620
+fall<font color="#CCCCCC"> within</font><font color="#E5E5E5"> 0 and 150 okay so how do we</font>
+
+175
+00:07:36,400 --> 00:07:40,210
+drop a constraint<font color="#CCCCCC"> now you know</font><font color="#E5E5E5"> that we</font>
+
+176
+00:07:38,620 --> 00:07:42,610
+have added this constraint<font color="#CCCCCC"> using the</font>
+
+177
+00:07:40,210 --> 00:07:44,859
+designer<font color="#E5E5E5"> so obviously if we expand this</font>
+
+178
+00:07:42,610 --> 00:07:46,870
+folder you<font color="#CCCCCC"> should see that constraint</font>
+
+179
+00:07:44,860 --> 00:07:49,240
+there<font color="#CCCCCC"> okay so we have this constraint</font>
+
+180
+00:07:46,870 --> 00:07:50,949
+<font color="#E5E5E5">now how do we delete this constraint or</font>
+
+181
+00:07:49,240 --> 00:07:52,780
+drop this constraint<font color="#E5E5E5"> again you can do</font>
+
+182
+00:07:50,949 --> 00:07:54,760
+that<font color="#E5E5E5"> graphically or you can use a</font>
+
+183
+00:07:52,780 --> 00:07:56,919
+command<font color="#CCCCCC"> to do it graphically we just</font>
+
+184
+00:07:54,760 --> 00:07:59,169
+right click on<font color="#CCCCCC"> that</font><font color="#E5E5E5"> and delete and if</font>
+
+185
+00:07:56,919 --> 00:08:01,359
+you want to use<font color="#E5E5E5"> a command a</font><font color="#CCCCCC"> sequel</font>
+
+186
+00:07:59,169 --> 00:08:03,580
+<font color="#CCCCCC">server</font><font color="#E5E5E5"> query it is just like dropping</font>
+
+187
+00:08:01,360 --> 00:08:05,710
+any other constraint so obviously<font color="#E5E5E5"> if you</font>
+
+188
+00:08:03,580 --> 00:08:07,900
+want to drop a constraint<font color="#E5E5E5"> it's like you</font>
+
+189
+00:08:05,710 --> 00:08:10,419
+<font color="#E5E5E5">are altering the table because the</font>
+
+190
+00:08:07,900 --> 00:08:12,909
+constraint is for the table so<font color="#E5E5E5"> we have</font>
+
+191
+00:08:10,419 --> 00:08:16,330
+to tell we<font color="#E5E5E5"> are going to alter the table</font>
+
+192
+00:08:12,909 --> 00:08:18,580
+<font color="#CCCCCC">so all the table which table is that TBL</font>
+
+193
+00:08:16,330 --> 00:08:20,469
+person and how are you<font color="#E5E5E5"> going</font><font color="#CCCCCC"> to alter</font>
+
+194
+00:08:18,580 --> 00:08:23,200
+this table<font color="#E5E5E5"> I'm going to drop one</font><font color="#CCCCCC"> of</font><font color="#E5E5E5"> the</font>
+
+195
+00:08:20,469 --> 00:08:24,909
+<font color="#E5E5E5">existing constraints in this case the</font>
+
+196
+00:08:23,200 --> 00:08:26,530
+check constraint<font color="#CCCCCC"> that we have created</font>
+
+197
+00:08:24,910 --> 00:08:29,170
+refresh this<font color="#E5E5E5"> and we should</font><font color="#CCCCCC"> see that</font>
+
+198
+00:08:26,530 --> 00:08:30,969
+check<font color="#CCCCCC"> constrain</font><font color="#E5E5E5"> there okay so I want to</font>
+
+199
+00:08:29,170 --> 00:08:34,479
+<font color="#CCCCCC">drop this constraint so let's copy that</font>
+
+200
+00:08:30,970 --> 00:08:38,110
+constraint name so all the table TBL
+
+201
+00:08:34,479 --> 00:08:40,300
+person drop what do<font color="#E5E5E5"> I want to drop</font><font color="#CCCCCC"> I</font>
+
+202
+00:08:38,110 --> 00:08:43,690
+want to drop a constraint and then
+
+203
+00:08:40,299 --> 00:08:45,459
+specify<font color="#CCCCCC"> the name of</font><font color="#E5E5E5"> the constraint so</font>
+
+204
+00:08:43,690 --> 00:08:47,890
+you press f5<font color="#E5E5E5"> command completed</font>
+
+205
+00:08:45,460 --> 00:08:50,170
+successfully<font color="#CCCCCC"> let's refresh the folder</font>
+
+206
+00:08:47,890 --> 00:08:52,900
+and the constraint shouldn't be there
+
+207
+00:08:50,170 --> 00:08:55,990
+anymore<font color="#CCCCCC"> okay</font><font color="#E5E5E5"> now let's go ahead and see</font>
+
+208
+00:08:52,900 --> 00:08:57,459
+<font color="#CCCCCC">how to add a constraint using sequel</font>
+
+209
+00:08:55,990 --> 00:09:00,460
+query now if you look at the
+
+210
+00:08:57,460 --> 00:09:01,930
+<font color="#E5E5E5">presentation it's very simple the</font>
+
+211
+00:09:00,460 --> 00:09:03,640
+general<font color="#E5E5E5"> formula for adding a check</font>
+
+212
+00:09:01,930 --> 00:09:06,250
+constraint not only check constraint any
+
+213
+00:09:03,640 --> 00:09:09,520
+constraint for that matter<font color="#CCCCCC"> okay so all</font>
+
+214
+00:09:06,250 --> 00:09:12,010
+<font color="#CCCCCC">the table</font><font color="#E5E5E5"> table name add the constraint</font>
+
+215
+00:09:09,520 --> 00:09:13,720
+the name of the constraint<font color="#E5E5E5"> so here we</font>
+
+216
+00:09:12,010 --> 00:09:15,910
+are adding a check constraint<font color="#CCCCCC"> so we use</font>
+
+217
+00:09:13,720 --> 00:09:18,010
+this check keyword and then a boolean
+
+218
+00:09:15,910 --> 00:09:19,780
+<font color="#E5E5E5">expression if you remember while we are</font>
+
+219
+00:09:18,010 --> 00:09:22,270
+<font color="#E5E5E5">doing it graphically</font><font color="#CCCCCC"> we did in in that</font>
+
+220
+00:09:19,780 --> 00:09:24,520
+boolean expression window<font color="#CCCCCC"> but here we</font>
+
+221
+00:09:22,270 --> 00:09:31,510
+<font color="#E5E5E5">have</font><font color="#CCCCCC"> to do that</font><font color="#E5E5E5"> within this parentheses</font>
+
+222
+00:09:24,520 --> 00:09:35,050
+<font color="#E5E5E5">okay so let's see how to do that so all</font>
+
+223
+00:09:31,510 --> 00:09:38,610
+the<font color="#E5E5E5"> table table name and what we want to</font>
+
+224
+00:09:35,050 --> 00:09:40,990
+<font color="#CCCCCC">do we want</font><font color="#E5E5E5"> to</font><font color="#CCCCCC"> add a constraint so add</font>
+
+225
+00:09:38,610 --> 00:09:42,460
+constraint<font color="#E5E5E5"> and then you have to give the</font>
+
+226
+00:09:40,990 --> 00:09:45,670
+constraint a<font color="#E5E5E5"> meaningful name</font>
+
+227
+00:09:42,460 --> 00:09:49,090
+so check constraints by default<font color="#E5E5E5"> will</font>
+
+228
+00:09:45,670 --> 00:09:50,979
+have<font color="#CCCCCC"> ACK prefix underscore the table for</font>
+
+229
+00:09:49,090 --> 00:09:53,020
+<font color="#E5E5E5">which we</font><font color="#CCCCCC"> are adding this constraint in</font>
+
+230
+00:09:50,980 --> 00:09:55,960
+this case it's going to be TBL person
+
+231
+00:09:53,020 --> 00:09:58,270
+and for which column<font color="#E5E5E5"> it's going to be</font>
+
+232
+00:09:55,960 --> 00:10:00,550
+for<font color="#E5E5E5"> each column and then what type of</font>
+
+233
+00:09:58,270 --> 00:10:03,010
+constraint are we going to add<font color="#E5E5E5"> check</font>
+
+234
+00:10:00,550 --> 00:10:04,240
+constraint<font color="#E5E5E5"> and within the parentheses we</font>
+
+235
+00:10:03,010 --> 00:10:07,000
+have<font color="#E5E5E5"> to specify the boolean expression</font>
+
+236
+00:10:04,240 --> 00:10:09,400
+<font color="#CCCCCC">what should be</font><font color="#E5E5E5"> our boolean expression we</font>
+
+237
+00:10:07,000 --> 00:10:12,420
+don't want to allow values for age you
+
+238
+00:10:09,400 --> 00:10:18,810
+know less than<font color="#E5E5E5"> 0 or greater than 150</font>
+
+239
+00:10:12,420 --> 00:10:26,020
+<font color="#E5E5E5">okay so age should be greater</font><font color="#CCCCCC"> than</font><font color="#E5E5E5"> 0</font><font color="#CCCCCC"> and</font>
+
+240
+00:10:18,810 --> 00:10:27,579
+age should be less than 150 that's<font color="#E5E5E5"> it so</font>
+
+241
+00:10:26,020 --> 00:10:30,040
+I press f5 command completed
+
+242
+00:10:27,580 --> 00:10:32,290
+successfully<font color="#CCCCCC"> refresh</font><font color="#E5E5E5"> the constraints</font>
+
+243
+00:10:30,040 --> 00:10:34,930
+folder and you should see<font color="#E5E5E5"> the constraint</font>
+
+244
+00:10:32,290 --> 00:10:38,189
+once again and if we try to add any
+
+245
+00:10:34,930 --> 00:10:43,969
+value something<font color="#E5E5E5"> like maybe 900</font>
+
+246
+00:10:38,190 --> 00:10:45,270
+<font color="#CCCCCC">50 years plus f5</font><font color="#E5E5E5"> it should give an error</font>
+
+247
+00:10:43,970 --> 00:10:47,700
+<font color="#CCCCCC">alright</font>
+
+248
+00:10:45,270 --> 00:10:49,920
+so that's<font color="#E5E5E5"> how we do that</font><font color="#CCCCCC"> and remember if</font>
+
+249
+00:10:47,700 --> 00:10:51,690
+this<font color="#E5E5E5"> boolean expression returns true the</font>
+
+250
+00:10:49,920 --> 00:10:53,819
+check constraint<font color="#E5E5E5"> allows the value</font>
+
+251
+00:10:51,690 --> 00:10:55,680
+otherwise<font color="#E5E5E5"> it doesn't since ages</font>
+
+252
+00:10:53,820 --> 00:10:58,020
+<font color="#E5E5E5">inaudible column it's possible to pass a</font>
+
+253
+00:10:55,680 --> 00:11:00,270
+null value<font color="#CCCCCC"> for this column</font><font color="#E5E5E5"> when we are</font>
+
+254
+00:10:58,020 --> 00:11:02,310
+<font color="#E5E5E5">inserting a row</font><font color="#CCCCCC"> so when you</font><font color="#E5E5E5"> pass a null</font>
+
+255
+00:11:00,270 --> 00:11:04,439
+<font color="#E5E5E5">for this age column the boolean</font>
+
+256
+00:11:02,310 --> 00:11:06,540
+<font color="#CCCCCC">expression evaluates to unknown and</font>
+
+257
+00:11:04,440 --> 00:11:08,640
+allows<font color="#CCCCCC"> that null value so it's possible</font>
+
+258
+00:11:06,540 --> 00:11:10,770
+<font color="#E5E5E5">for you to insert Mouse because</font><font color="#CCCCCC"> why</font><font color="#E5E5E5"> the</font>
+
+259
+00:11:08,640 --> 00:11:14,040
+<font color="#E5E5E5">boolean expression that's involved there</font>
+
+260
+00:11:10,770 --> 00:11:16,199
+<font color="#E5E5E5">returns an unknown result</font><font color="#CCCCCC"> okay so when</font>
+
+261
+00:11:14,040 --> 00:11:18,449
+will a check constraint<font color="#CCCCCC"> prevent a value</font>
+
+262
+00:11:16,200 --> 00:11:21,780
+<font color="#E5E5E5">from being entered whenever the boolean</font>
+
+263
+00:11:18,450 --> 00:11:23,760
+expression returns<font color="#E5E5E5"> false</font><font color="#CCCCCC"> okay and to</font>
+
+264
+00:11:21,780 --> 00:11:26,640
+drop<font color="#E5E5E5"> a constraint we have seen we use</font>
+
+265
+00:11:23,760 --> 00:11:30,450
+this alter table and drop constraint<font color="#E5E5E5"> the</font>
+
+266
+00:11:26,640 --> 00:11:32,250
+name of the constraint on this slide you
+
+267
+00:11:30,450 --> 00:11:34,410
+<font color="#E5E5E5">can find resources</font><font color="#CCCCCC"> for asp.net and C</font>
+
+268
+00:11:32,250 --> 00:11:36,180
+sharp interview questions<font color="#E5E5E5"> that's it for</font>
+
+269
+00:11:34,410 --> 00:11:38,660
+today thank<font color="#E5E5E5"> you</font><font color="#CCCCCC"> for listening have</font><font color="#E5E5E5"> a</font>
+
+270
+00:11:36,180 --> 00:11:38,660
+<font color="#CCCCCC">great day</font>
+
